@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'nhlhockey/css/base.css' %}" />
+	<title>NHL Hockey Teams</title>
+</head>
+<body>
+	<h1>Welcome To The NHL Hockey Team Listings</h1>
+	<h2>Please Select A Conference</h2>
+	{% for conf in all_conferences %}
+        <p><a href="{% url 'nhl:conference' conf %}">{{ conf.display_name }}</a></p>
+    {% endfor %}
+</body>
+</html>

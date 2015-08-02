@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'nhlhockey/css/base.css' %}" />
+	<title>NHL Hockey Teams - Divisional Teams</title>
+</head>
+<body>
+	<h1>Welcome To The NHL Hockey Team Listings For The {{ division.display_name }} Division</h1>
+	<h2>Please Select A Team</h2>
+	{% for team in teams %}
+        <p><a href="{% url 'nhl:team' division.conference division team.abbreviation %}">{{ team.display_name }}</a></p>
+    {% endfor %}
+</body>
+</html>

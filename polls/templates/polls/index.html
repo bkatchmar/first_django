@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'polls/css/polls.css' %}" />
+	<title>Polls App Home</title>
+</head>
+<body>
+{% if latest_poll_list %}
+    <ul>
+    {% for poll in latest_poll_list %}
+        <li><a href="{% url 'detail' poll.id %}">{{ poll.question }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>

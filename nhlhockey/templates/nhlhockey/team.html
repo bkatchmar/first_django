@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'nhlhockey/css/base.css' %}" />
+	<title>NHL Hockey Teams - {{ team.display_name }}</title>
+</head>
+<body>
+	<h1>Viewing The {{ team.display_name }}</h1>
+	<table>
+		<tr>
+			<td>Location:</td>
+			<td>{{ team.location }}</td>
+		</tr>
+		<tr>
+			<td>Name:</td>
+			<td>{{ team.name }}</td>
+		</tr>
+		<tr>
+			<td>Abbreviation:</td>
+			<td>{{ team.abbreviation }}</td>
+		</tr>
+		<tr>
+			<td>Division:</td>
+			<td>{{ team.division.display_name }}</td>
+		</tr>
+		<tr>
+			<td>Conference:</td>
+			<td>{{ team.division.conference.display_name }}</td>
+		</tr>
+	</table>
+</body>
+</html>
